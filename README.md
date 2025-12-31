@@ -94,3 +94,24 @@ The pipeline evaluates two different methods of retrieval. While brute-force sea
 - **Sentence Splitting:** Powered by `spaCy` to ensure context remains intact.
 - **Vector Engine:** `all-mpnet-base-v2` (HuggingFace) for high-accuracy embeddings.
 - **Indexing:** `FAISS` for lightning-fast similarity searching.
+---
+## 📜 License
+This project is open-source and available under the MIT License.
+
+The dataset (Human Nutrition: 2020 Edition) is licensed under a Creative Commons Attribution 4.0 International License.
+---
+### 2. The `requirements.txt` File
+Copy the code block below and paste it into a file named **`requirements.txt`**. This is essential so people know which libraries to install.
+
+```text
+jupyter
+pandas
+numpy
+torch
+sentence-transformers
+pymupdf
+spacy
+faiss-gpu
+tqdm
+requests
+matplotlib
