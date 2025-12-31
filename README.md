@@ -38,3 +38,50 @@ The pipeline follows these distinct stages:
 │   └── embeddings.index           # Saved FAISS index
 ├── requirements.txt               # Dependencies
 └── README.md                      # Project documentation
+## ⚡ Quick Start
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/your-username/nutrition-rag-pipeline.git](https://github.com/your-username/nutrition-rag-pipeline.git)
+cd nutrition-rag-pipeline
+### 2. Set Up Virtual Environment
+python -m venv venv
+```bash
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+### 4. Run the Pipeline
+Ensure you have the PDF file in the root or data directory, then launch Jupyter:
+```bash
+jupyter notebook notebooks/RAG_application.ipynb
+## 🔍 Usage & Examples
+
+### 🧠 Semantic Search
+Unlike traditional keyword search, this system understands the context of your question. It uses vector embeddings to find the most conceptually relevant passages from the textbook.
+
+**Example Query:**
+> "What are the functions of macronutrients?"
+
+**Top Retrieved Result:**
+> 📖 *"Macronutrients: Nutrients that are needed in large amounts are called macronutrients. There are three classes of macronutrients: carbohydrates, lipids, and proteins. These can be metabolically processed into cellular energy. The energy from macronutrients comes from their chemical bonds. This chemical energy is converted into cellular energy that is then utilized to perform work..."*
+
+---
+
+### 🚀 Performance Benchmark
+The pipeline evaluates two different methods of retrieval. While brute-force search is accurate, **FAISS** provides the industrial-scale speed required for large datasets.
+
+| Search Method | Technical Description | Avg. Search Time |
+| :--- | :--- | :--- |
+| **PyTorch (Dot Product)** | Brute-force tensor calculation on GPU | `~4.5 ms` |
+| **FAISS (IndexFlatIP)** | Optimized Vector Indexing & Retrieval | **`~0.5 ms`** |
+
+> **Result:** Using FAISS provides a **10x speed improvement**, making it the ideal choice for production-level RAG applications.
+
+---
+
+### 🛠️ Key Components
+
+
+- **Sentence Splitting:** Powered by `spaCy` to ensure context remains intact.
+- **Vector Engine:** `all-mpnet-base-v2` (HuggingFace) for high-accuracy embeddings.
+- **Indexing:** `FAISS` for lightning-fast similarity searching.
