@@ -38,22 +38,31 @@ The pipeline follows these distinct stages:
 │   └── embeddings.index           # Saved FAISS index
 ├── requirements.txt               # Dependencies
 └── README.md                      # Project documentation
+```
 ## ⚡ Quick Start
 ### 1. Clone the Repository
 ```bash
 git clone [https://github.com/your-username/nutrition-rag-pipeline.git](https://github.com/your-username/nutrition-rag-pipeline.git)
 cd nutrition-rag-pipeline
+```
 ### 2. Set Up Virtual Environment
-python -m venv venv
 ```bash
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+python -m venv venv
+
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+```
 ### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
+```
 ### 4. Run the Pipeline
 Ensure you have the PDF file in the root or data directory, then launch Jupyter:
 ```bash
 jupyter notebook notebooks/RAG_application.ipynb
+```
 ## 🔍 Usage & Examples
 
 ### 🧠 Semantic Search
